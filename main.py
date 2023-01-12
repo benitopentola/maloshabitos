@@ -45,4 +45,13 @@ for habit in habits_list:
     habits_time_label[habit].pack()
 
 # Crear un botón para reiniciar el cronómetro para cada hábito
-def reset_timer(hab
+def reset_timer(habit_name):
+    habits_time[habit_name] = time.time()
+    update_habits()
+
+for habit in habits_list:
+    reset_button = tk.Button(root, text="Reiniciar", command=lambda: reset_timer(habit))
+    reset_button.pack()
+
+root.mainloop()
+
